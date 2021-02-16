@@ -16,7 +16,7 @@ import {
 
 export const Header = () => {
 	return (
-		<MDBNavbar color="elegant-color-dark" dark expand="md">
+		<MDBNavbar color="unique-color" dark expand="md">
 			<MDBNavbarToggler />
 			<MDBCollapse id="navbarCollapse" navbar>
 				<MDBNavbarNav left>
