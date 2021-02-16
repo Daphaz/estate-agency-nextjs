@@ -14,7 +14,7 @@ import {
 	MDBIcon,
 } from "mdbreact";
 
-const Header = () => {
+export const Header = () => {
 	return (
 		<MDBNavbar color="elegant-color-dark" dark expand="md">
 			<MDBNavbarToggler />
@@ -31,5 +31,3 @@ const Header = () => {
 		</MDBNavbar>
 	);
 };
-
-export default Header;
