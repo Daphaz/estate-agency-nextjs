@@ -4,10 +4,10 @@ import { MDBRow, MDBCol, MDBIcon } from "mdbreact";
 export const Features = () => {
 	return (
 		<section className="my-5">
-			<h2 className="h1-responsive font-weight-bold text-center my-5">
+			<h3 className="h1-responsive font-weight-bold text-center my-5">
 				Why is it so great?
-			</h2>
-			<p className="lead grey-text w-responsive text-center mx-auto mb-5">
+			</h3>
+			<p className="lead greyColor w-responsive text-center mx-auto mb-5">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
 				veniam.
@@ -27,8 +27,8 @@ export const Features = () => {
 							<MDBIcon icon="share" size="lg" className="indigo-text" />
 						</MDBCol>
 						<MDBCol xl="10" md="11" size="10">
-							<h5 className="font-weight-bold mb-3">Safety</h5>
-							<p className="grey-text">
+							<h4 className="font-weight-bold mb-3">Safety</h4>
+							<p className="greyColor">
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit enim ad
 								minima veniam, quis nostrum exercitationem ullam. Reprehenderit
 								maiores aperiam assumenda deleniti hic.
@@ -40,8 +40,8 @@ export const Features = () => {
 							<MDBIcon icon="share" size="lg" className="indigo-text" />
 						</MDBCol>
 						<MDBCol xl="10" md="11" size="10">
-							<h5 className="font-weight-bold mb-3">Technology</h5>
-							<p className="grey-text">
+							<h4 className="font-weight-bold mb-3">Technology</h4>
+							<p className="greyColor">
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit enim ad
 								minima veniam, quis nostrum exercitationem ullam. Reprehenderit
 								maiores aperiam assumenda deleniti hic.
@@ -53,8 +53,8 @@ export const Features = () => {
 							<MDBIcon icon="share" size="lg" className="indigo-text" />
 						</MDBCol>
 						<MDBCol xl="10" md="11" size="10">
-							<h5 className="font-weight-bold mb-3">Finance</h5>
-							<p className="grey-text">
+							<h4 className="font-weight-bold mb-3">Finance</h4>
+							<p className="greyColor">
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit enim ad
 								minima veniam, quis nostrum exercitationem ullam. Reprehenderit
 								maiores aperiam assumenda deleniti hic.

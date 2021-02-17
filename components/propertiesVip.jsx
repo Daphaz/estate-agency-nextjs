@@ -1,12 +1,5 @@
 import React from "react";
-import {
-	MDBCardBody,
-	MDBCardText,
-	MDBCardTitle,
-	MDBCol,
-	MDBRow,
-	MDBView,
-} from "mdbreact";
+import { MDBCardBody, MDBCardText, MDBCol, MDBRow, MDBView } from "mdbreact";
 import { priceFormatted } from "../helpers";
 
 export const PropertiesVip = ({ properties }) => {
@@ -26,9 +19,7 @@ export const PropertiesVip = ({ properties }) => {
 							/>
 						</MDBView>
 						<MDBCardBody>
-							<MDBCardTitle className="h4-responsive">
-								{property.title}
-							</MDBCardTitle>
+							<h3 className="card-title h4-responsive">{property.title}</h3>
 							<MDBCardText>
 								<strong>{priceFormatted(property.price)}</strong>
 							</MDBCardText>

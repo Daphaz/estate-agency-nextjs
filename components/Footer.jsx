@@ -9,8 +9,8 @@ export const Footer = () => {
 					<MDBCol md="6">
 						<h5 className="title">Footer Content</h5>
 						<p>
-							Here you can use rows and columns here to organize your footer
-							content.
+							Ce site est une démonstration à titre d'exemple/référence
+							uniquement.
 						</p>
 					</MDBCol>
 					<MDBCol md="6">
@@ -34,8 +34,8 @@ export const Footer = () => {
 			</MDBContainer>
 			<div className="footer-copyright text-center py-3">
 				<MDBContainer fluid>
-					&copy; {new Date().getFullYear()} Copyright:
-					<a href="https://www.mdbootstrap.com"> MDBootstrap.com </a>
+					&copy; {new Date().getFullYear()}
+					<p>ne doit pas être utilisé comme un kit de démarrage.</p>
 				</MDBContainer>
 			</div>
 		</MDBFooter>

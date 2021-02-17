@@ -1,16 +1,15 @@
 import React from "react";
 import {
 	MDBView,
-	MDBMask,
 	MDBRow,
 	MDBCard,
 	MDBCardBody,
 	MDBCol,
 	MDBIcon,
-	MDBBtn,
 } from "mdbreact";
 import Skeleton from "react-loading-skeleton";
 import { priceFormatted } from "../helpers";
+import Link from "next/link";
 
 export const Card = ({ properties }) => {
 	return (
@@ -21,19 +20,22 @@ export const Card = ({ properties }) => {
 						<MDBCardBody>
 							<MDBRow>
 								<MDBCol lg="5">
-									<MDBView
-										className="rounded z-depth-2 mb-lg-0 mb-4"
-										hover
-										waves>
-										<img
-											className="img-fluid globalImg"
-											src={property.pictures[0]}
-											alt=""
-										/>
-										<a href="#!">
-											<MDBMask overlay="white-slight" />
+									<Link
+										href={"/property/[slug]"}
+										as={`/property/${property.slug}`}>
+										<a>
+											<MDBView
+												className="rounded z-depth-2 mb-lg-0 mb-4"
+												hover
+												waves>
+												<img
+													className="img-fluid globalImg"
+													src={property.pictures[0]}
+													alt="property in situation"
+												/>
+											</MDBView>
 										</a>
-									</MDBView>
+									</Link>
 								</MDBCol>
 								<MDBCol lg="7">
 									<span className="globalColor">
