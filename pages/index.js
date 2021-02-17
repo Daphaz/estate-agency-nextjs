@@ -7,6 +7,7 @@ import { Carousel } from "../components/Carousel";
 
 import { PropertiesVip } from "../components/propertiesVip";
 import { PropertiesSection } from "../components/propertiesSection";
+import { Features } from "../components/features";
 
 export default function Home({ propertiesVip, properties }) {
 	return (
@@ -15,6 +16,7 @@ export default function Home({ propertiesVip, properties }) {
 			<div className="container">
 				<PropertiesVip properties={propertiesVip} />
 				<PropertiesSection properties={properties} />
+				<Features />
 			</div>
 		</Layout>
 	);
