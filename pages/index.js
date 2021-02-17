@@ -2,7 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import api from "../auth/axios";
 
-import Layout from "../components/Layout";
+import { Layout } from "../components/Layout";
 import { Carousel } from "../components/Carousel";
 
 import { PropertiesVip } from "../components/propertiesVip";

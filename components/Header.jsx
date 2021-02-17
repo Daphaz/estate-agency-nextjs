@@ -1,18 +1,13 @@
 import React from "react";
 import {
 	MDBNavbar,
-	MDBNavbarBrand,
 	MDBNavbarNav,
 	MDBNavItem,
 	MDBNavbarToggler,
 	MDBCollapse,
-	MDBFormInline,
-	MDBDropdown,
-	MDBDropdownToggle,
-	MDBDropdownMenu,
-	MDBDropdownItem,
 	MDBIcon,
 } from "mdbreact";
+import Link from "next/link";
 
 export const Header = () => {
 	return (
@@ -21,10 +16,17 @@ export const Header = () => {
 			<MDBCollapse id="navbarCollapse" navbar>
 				<MDBNavbarNav left>
 					<MDBNavItem>
-						<div className="nav-links white-text">
-							<MDBIcon icon="igloo" className="mr-1" />
-							Home
-						</div>
+						<Link href="/">
+							<a className="nav-link white-text">
+								<MDBIcon icon="igloo" className="mr-1" />
+								Home
+							</a>
+						</Link>
+					</MDBNavItem>
+					<MDBNavItem>
+						<Link href="/properties">
+							<a className="nav-link white-text">Listes des biens</a>
+						</Link>
 					</MDBNavItem>
 				</MDBNavbarNav>
 			</MDBCollapse>
