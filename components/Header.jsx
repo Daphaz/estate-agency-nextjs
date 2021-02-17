@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
 	MDBNavbar,
 	MDBNavbarNav,
@@ -10,10 +10,15 @@ import {
 import Link from "next/link";
 
 export const Header = () => {
+	const [toggle, setToggle] = useState(false);
+
+	const toggleCollapse = () => {
+		setToggle(!toggle);
+	};
 	return (
 		<MDBNavbar color="unique-color" dark expand="md">
-			<MDBNavbarToggler />
-			<MDBCollapse id="navbarCollapse" navbar>
+			<MDBNavbarToggler onClick={toggleCollapse} />
+			<MDBCollapse id="navbarCollapse" navbar isOpen={toggle}>
 				<MDBNavbarNav left>
 					<MDBNavItem>
 						<Link href="/">
