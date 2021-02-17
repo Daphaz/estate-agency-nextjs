@@ -6,14 +6,15 @@ import {
 	MDBCol,
 	MDBRow,
 	MDBView,
+	MDBBtn,
 } from "mdbreact";
 import { priceFormatted } from "../helpers";
 
-export const PropertiesVip = ({ properties }) => {
+export const PropertiesSection = ({ properties }) => {
 	return (
 		<>
 			<h2 className="h2-responsive font-weight-bold text-center my-4 globalColor">
-				Biens Sponsorisés
+				Notre Catalogue
 			</h2>
 			<MDBRow>
 				{properties.map((property) => (
@@ -36,6 +37,10 @@ export const PropertiesVip = ({ properties }) => {
 					</MDBCol>
 				))}
 			</MDBRow>
+			<div className="text-center">
+				<MDBBtn className="globalBtn">Afficher plus</MDBBtn>
+			</div>
+			<hr className="my-5" />
 		</>
 	);
 };
