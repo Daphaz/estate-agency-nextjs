@@ -4,14 +4,15 @@ import Layout from "../components/Layout";
 import api from "../auth/axios";
 
 import { PropertiesVip } from "../components/propertiesVip";
-import { MDBContainer } from "mdbreact";
+import { Carousel } from "../components/Carousel";
 
 export default function Home({ propertiesVip }) {
 	return (
 		<Layout>
-			<MDBContainer>
+			<Carousel />
+			<div className="container">
 				<PropertiesVip properties={propertiesVip} />
-			</MDBContainer>
+			</div>
 		</Layout>
 	);
 }
