@@ -13,8 +13,9 @@ import {
 import { Slug } from "../../components/Slug";
 import Skeleton from "react-loading-skeleton";
 import { CardVip } from "../../components/CardVip";
+import { CardRelated } from "../../components/CardRelated";
 
-const Property = ({ property, properties }) => {
+const Property = ({ property, properties, propertyRelated }) => {
 	const styles = {
 		fontSize: 15,
 	};
@@ -51,6 +52,15 @@ const Property = ({ property, properties }) => {
 										<h4 className="h4-responsive mt-3">Biens Sponsorisés</h4>
 										<CardVip properties={properties} />
 									</MDBCol>
+								</MDBRow>
+								<hr className="my-4" />
+								<MDBRow>
+									{propertyRelated && propertyRelated.length !== 0 && (
+										<MDBCol>
+											<h4 className="h4-responsive mb-5">Biens Similaire</h4>
+											<CardRelated properties={propertyRelated} />
+										</MDBCol>
+									)}
 								</MDBRow>
 							</MDBCardBody>
 						</MDBCard>
@@ -123,11 +133,15 @@ export const getStaticProps = async ({ params }) => {
 	const { slug } = params;
 	const { data: property } = await api.get(`/api/property/${slug}`);
 	const { data: properties } = await api.get("/api/properties/vip");
+	const { data: propertyRelated } = await api.get(
+		`/api/properties/related/${property._id}`
+	);
 
 	return {
 		props: {
 			property,
 			properties,
+			propertyRelated,
 		},
 	};
 };
