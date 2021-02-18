@@ -18,12 +18,14 @@ export const CardRelated = ({ properties }) => {
 						<MDBCol className="mb-3" md="6" lg="4" key={property._id}>
 							<MDBCard>
 								<MDBCardHeader>{property.title}</MDBCardHeader>
-								<MDBCardImage
-									src={property.pictures[0]}
-									className="globalImg"
-									hover
-									waves
-								/>
+								<MDBCardBody>
+									<MDBCardImage
+										src={property.pictures[0]}
+										className="globalImg"
+										hover
+										waves
+									/>
+								</MDBCardBody>
 								<MDBCardFooter>
 									<div className="globalColor">
 										{priceFormatted(property.price)}
