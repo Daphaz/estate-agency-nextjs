@@ -48,12 +48,12 @@ swr | recover customer data
 ## Features
 Home Page | Catalog Page | Product Page
 --------- | ------------ | ------------
-- [x] Layout | - [x] Page of catalog | - [x] Page of product 
-- [x] Navbar | - [x] pagination | - [x] Section contact
-- [x] Sponsored Properties | ... | - [x] Section properties sponsorised
-- [x] Carousel Homepage | ... | - [x] section properties related
-- [x] Catalog Homepage | ... | ...
-- [x] Features Homepage | ... | ... 
+[x] Layout | [x] Page of catalog | [x] Page of product 
+[x] Navbar | [x] pagination | [x] Section contact
+[x] Sponsored Properties | ... | [x] Section properties sponsorised
+[x] Carousel Homepage | ... | [x] section properties related
+[x] Catalog Homepage | ... | ...
+[x] Features Homepage | ... | ... 
 
 ---
 
