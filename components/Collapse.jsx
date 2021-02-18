@@ -34,7 +34,7 @@ export const Collapse = ({ title, children }) => {
 				)}
 			</div>
 			<MDBCollapse id="basicCollapse" isOpen={collapse}>
-				<p>{children}</p>
+				{children}
 			</MDBCollapse>
 		</div>
 	);
