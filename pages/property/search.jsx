@@ -10,18 +10,23 @@ const Search = () => {
 	const [properties, setProperties] = useState("");
 	const router = useRouter();
 
-	const getProperties = async () => {
+	const getProperties = async (isSubscribed) => {
 		const { data } = await axios.post("/api/property/list/search", {
 			filters: {
 				title: router.query.title,
 				category: router.query.category,
 			},
 		});
-		setProperties(data);
+		if (isSubscribed) {
+			setProperties(data);
+		}
 	};
 
 	useEffect(() => {
-		getProperties();
+		let isSubscribed = true;
+		getProperties(isSubscribed);
+
+		return () => (isSubscribed = false);
 	}, [router.query.title, router.query.category, properties]);
 
 	return (

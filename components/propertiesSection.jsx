@@ -8,8 +8,16 @@ import {
 	MDBBtn,
 } from "mdbreact";
 import { priceFormatted } from "../helpers";
+import { useRouter } from "next/router";
 
 export const PropertiesSection = ({ properties }) => {
+	const router = useRouter();
+	const handleClick = () => {
+		router.push("/properties");
+	};
+	const handleClickImg = (slug) => {
+		router.push(`/property/${slug}`);
+	};
 	return (
 		<>
 			<h2 className="h2-responsive font-weight-bold text-center my-4 globalColor">
@@ -18,11 +26,11 @@ export const PropertiesSection = ({ properties }) => {
 			<MDBRow>
 				{properties.map((property) => (
 					<MDBCol md="4" lg="4" key={property._id}>
-						<MDBView zoom>
+						<MDBView zoom onClick={() => handleClickImg(property.slug)}>
 							<img
 								src={property.pictures[0]}
 								alt={property.title}
-								className="globalImg"
+								className="globalImg pointerImg"
 							/>
 						</MDBView>
 						<MDBCardBody>
@@ -35,7 +43,9 @@ export const PropertiesSection = ({ properties }) => {
 				))}
 			</MDBRow>
 			<div className="text-center">
-				<MDBBtn className="globalBtn">Afficher plus</MDBBtn>
+				<MDBBtn className="globalBtn" onClick={handleClick}>
+					Afficher plus
+				</MDBBtn>
 			</div>
 			<hr className="my-5" />
 		</>

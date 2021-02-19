@@ -16,6 +16,7 @@
 	color: #3f729b;
 }
 .globalBtn {
+	border: none;
 	text-transform: inherit;
 	background-color: #3f729b !important;
 	color: white;
@@ -23,6 +24,10 @@
 	padding: 10px 25px;
 	border-radius: 5px;
 }
+.globalBtn:focus {
+	outline: none;
+}
+
 .globalBtn:hover {
 	color: white;
 }
@@ -78,6 +83,9 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+}
+.pointerImg {
+	cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {

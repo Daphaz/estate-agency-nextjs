@@ -9,14 +9,18 @@ import {
 	MDBCardImage,
 } from "mdbreact";
 import { priceFormatted } from "../helpers";
+import Router from "next/router";
 
 export const CardRelated = ({ properties }) => {
+	const handleClick = (slug) => {
+		Router.push(`/property/${slug}`);
+	};
 	return (
 		<MDBRow>
 			{properties
 				? properties.map((property) => (
 						<MDBCol className="mb-3" md="6" lg="4" key={property._id}>
-							<MDBCard>
+							<MDBCard onClick={() => handleClick(property.slug)}>
 								<MDBCardHeader>{property.title}</MDBCardHeader>
 								<MDBCardBody>
 									<MDBCardImage
