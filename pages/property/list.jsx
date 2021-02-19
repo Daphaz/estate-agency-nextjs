@@ -1,5 +1,5 @@
 import React from "react";
-import { MDBDataTableV5, MDBIcon, MDBView } from "mdbreact";
+import { MDBDataTable } from "mdbreact";
 import { AdminRoute } from "../../auth/adminRoutes";
 import { Layout } from "../../components/Layout";
 import api from "../../auth/axios";
@@ -33,7 +33,7 @@ const PropertyList = () => {
 				sort: "asc",
 			},
 			{
-				label: "Créer le",
+				label: "date",
 				field: "createdAt",
 				sort: "asc",
 			},
@@ -43,7 +43,7 @@ const PropertyList = () => {
 			properties.map((property) => {
 				return {
 					title: property.title,
-					description: property.description.slice(0, 200),
+					description: property.description.slice(0, 98),
 					prix: priceFormatted(property.price),
 					createdAt: (
 						<Moment format="DD/MM/YY à hh:mm:ss" date={property.createdAt} />
@@ -55,13 +55,14 @@ const PropertyList = () => {
 		<>
 			{user && user.role === "admin" ? (
 				<Layout>
-					<div className="container-fluid">
-						<MDBDataTableV5
+					<div className="container">
+						<MDBDataTable
 							data={dataTable}
-							entrieslabel="Lignes par page"
 							entries={5}
 							entriesOptions={[5, 10, 15, 20]}
 							pagesAmount={4}
+							responsiveSm
+							responsiveMd
 						/>
 					</div>
 				</Layout>
