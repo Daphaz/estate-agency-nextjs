@@ -1,13 +1,20 @@
 import React from "react";
-import { MDBCard, MDBCardImage, MDBCol } from "mdbreact";
+import { MDBCard, MDBCardImage } from "mdbreact";
 import { priceFormatted } from "../helpers";
+import Router from "next/router";
 
 export const CardVip = ({ properties }) => {
+	const handleClick = (slug) => {
+		Router.push(`/property/${slug}`);
+	};
 	return (
 		<>
 			{properties
 				? properties.map((property) => (
-						<MDBCard key={property._id} className="my-2">
+						<MDBCard
+							key={property._id}
+							className="my-2"
+							onClick={() => handleClick(property.slug)}>
 							<MDBCardImage
 								src={property.pictures[0]}
 								zoom
@@ -46,6 +53,10 @@ export const CardVip = ({ properties }) => {
 						text-transform: capitalize;
 						font-size: 10px;
 						font-weight: bolder;
+					}
+					.vedette:focus,
+					.exclu:focus {
+						outline: none;
 					}
 					.prix {
 						width: 100%;
