@@ -8,10 +8,7 @@
 You're sections headers will be used to reference location of destination.
 
 - [Description](#description)
-<<<<<<< HEAD
-=======
 - [Features](#features)
->>>>>>> release/v0.0.1
 - [How To Use](#how-to-use)
 
 ---
