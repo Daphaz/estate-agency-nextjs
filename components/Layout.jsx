@@ -2,12 +2,12 @@ import React from "react";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 
-export const Layout = ({ children }) => {
+export const Layout = ({ children, footer }) => {
 	return (
 		<>
 			<Header />
 			{children}
-			<Footer />
+			{!footer && <Footer />}
 		</>
 	);
 };
