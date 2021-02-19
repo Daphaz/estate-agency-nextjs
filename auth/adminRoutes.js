@@ -4,14 +4,17 @@ import { useRouter } from "next/router";
 
 export const AdminRoute = (Component) => {
 	return () => {
-		const { isAuthticated, user, loading } = useAuth();
+		const { isAuthenticated, user, loading } = useAuth();
 		const router = useRouter();
 
 		useEffect(() => {
-			if (isAuthticated && !loading && user.role !== "admin") {
+			if (
+				(isAuthenticated && !loading && user.role !== "admin") ||
+				user === null
+			) {
 				router.push("/");
 			}
-		}, [isAuthticated, loading, user]);
+		}, [isAuthenticated, loading, user]);
 
 		return <Component {...arguments} />;
 	};

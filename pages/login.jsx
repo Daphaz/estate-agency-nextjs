@@ -1,17 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from "mdbreact";
+import { MDBContainer, MDBInput } from "mdbreact";
 import { Layout } from "../components/Layout";
 import useAuth from "../auth/context";
 import { useRouter } from "next/router";
+import { redirectFromServer } from "../auth/cookies";
 
 const Login = () => {
 	const [state, setState] = useState({
 		username: "",
 		password: "",
 	});
+
 	const router = useRouter();
 
 	const { login, isAuthenticated } = useAuth();
+
+	useEffect(() => {
+		if (isAuthenticated) router.push("/");
+	}, [isAuthenticated]);
 
 	const handleChange = (value, e) => {
 		setState({ ...state, [value]: e.target.value });
@@ -54,6 +60,14 @@ const Login = () => {
 			</MDBContainer>
 		</Layout>
 	);
+};
+
+export const getServerSideProps = async (context) => {
+	redirectFromServer(context);
+
+	return {
+		props: {},
+	};
 };
 
 export default Login;

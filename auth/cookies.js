@@ -25,9 +25,8 @@ export const getCookieFromServer = (key, req) => {
 	}
 	const rawCookie = req.headers.cookie
 		.split(";")
-		.find((c) => c.trim())
-		.startsWith(`${key}=`);
-	if (rawCookie) {
+		.find((c) => c.trim().startsWith(`${key}=`));
+	if (!rawCookie) {
 		return undefined;
 	}
 	return rawCookie.split("=")[1];
@@ -35,7 +34,7 @@ export const getCookieFromServer = (key, req) => {
 
 export const redirectFromServer = (context) => {
 	if (context.req.headers.cookie) {
-		const token = getCookieFromServer("token");
+		const token = getCookieFromServer("token", context.req);
 		if (token) {
 			context.res.statusCode = 302;
 			context.res.setHeader("Location", "/");
