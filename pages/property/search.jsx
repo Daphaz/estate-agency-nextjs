@@ -27,7 +27,7 @@ const Search = () => {
 		getProperties(isSubscribed);
 
 		return () => (isSubscribed = false);
-	}, [router.query.title, router.query.category, properties]);
+	}, [router.query.title, router.query.category]);
 
 	return (
 		<Layout>
