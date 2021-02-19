@@ -6,7 +6,7 @@ import { Carousel } from "../components/Carousel";
 
 import { PropertiesVip } from "../components/propertiesVip";
 import { PropertiesSection } from "../components/propertiesSection";
-import { Features } from "../components/features";
+import { Features } from "../components/Features";
 
 export default function Home({ propertiesVip, properties }) {
 	return (
